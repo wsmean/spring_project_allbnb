@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sumin.allbnb.impl.MembersDAO">
+    <resultMap id="membersResult" type="membersVO">
+        <id property="email" column="EMAIL"/>
+        <result property="name" column="NAME"/>
+        <result property="password" column="PASSWORD"/>
+        <result property="join_date" column="JOIN_DATE"/>
+        <result property="admin" column="ADMIN"/>
+    </resultMap>
+
+    <insert id="insertMembers" parameterType="membersVO">
+        INSERT INTO MEMBERS(EMAIL,NAME,PASSWORD,JOIN_DATE)
+         VALUES (#{email},#{name},#{password},now());
+    </insert>
+
+    <select id="loadMembersList" resultMap="membersResult">
+        select*from members where admin is null;
+    </select>
+    
+    <select id="join_check" resultType="membersVO">
+        select * from members where email=#{email};  
+    </select>
+    
+    <select id="login_check" resultType="membersVO">
+    	select email from members where email=#{email} and password=#{password};
+    </select>
+
+    <delete id="deleteMembers" parameterType="membersVO">
+        delete from members where email=#{email};
+    </delete>
+</mapper>

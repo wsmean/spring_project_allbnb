@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumin.allbnb.impl.CountMoneyDAO">
+    <resultMap id="countResult" type="countMoneyVO">
+        <id property="hotel_count" column="hotel_count"/>
+        <result property="service_percent" column="service_percent"/>
+    </resultMap>
+
+    <select id="loadCountMoneyList" resultMap="countResult">
+    	select*from count_money_inform where hotel_count=${hotel_count};
+    </select>
+
+</mapper>

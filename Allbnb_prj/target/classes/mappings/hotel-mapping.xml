@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumin.allbnb.impl.HotelInformDAO">
+    <resultMap id="hotelResult" type="hotelInformVO">
+        <id property="hotel_num" column="hotel_num"/>
+        <result property="country_name" column="country_name"/>
+        <result property="hotel_title" column="hotel_title"/>
+        <result property="host_name" column="host_name"/>
+        <result property="hotel_name" column="hotel_name"/>
+        <result property="hotel_explain" column="hotel_explain"/>
+        <result property="hotel_price" column="hotel_price"/>
+        <result property="thumbnail" column="thumbnail"/>
+        <result property="img1" column="img1"/>
+        <result property="img2" column="img2"/>
+        <result property="img3" column="img3"/>
+        <result property="img4" column="img4"/>
+    </resultMap>
+
+    <select id="loadHotelList" resultMap="hotelResult">
+        select * from hotel_inform;
+    </select>
+    
+    <select id="loadHotelCountryList" resultMap="hotelResult">
+    	select * from hotel_inform where country_name=#{country_name};
+    </select>
+    
+    <select id="loadHotelDetail" resultMap="hotelResult">
+    	select * from hotel_inform where hotel_title=#{hotel_title};
+    </select>
+    
+    <select id="loadminHotelList" resultMap="hotelResult">
+        select * from hotel_inform where hotel_num=#{hotel_num};
+    </select>
+
+</mapper>

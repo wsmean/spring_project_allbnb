@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumin.allbnb.impl.ShowReserveDAO">
+	<resultMap type="ShowReserveVO" id="showResult">
+		<id property="hotel_num" column="hotel_num"/>
+		<result property="email" column="email"/>
+		<result property="reserve_num" column="reserve_num"/>
+		<result property="thumbnail" column="thumbnail"/>
+		<result property="hotel_title" column="hotel_title"/>
+		<result property="hotel_explain" column="hotel_explain"/>
+		<result property="check_in" column="check_in"/>
+		<result property="check_out" column="check_out"/>
+	</resultMap>
+	
+	<select id="loadReserveList" resultMap="showResult">
+		SELECT * FROM hotel_inform h JOIN reserve_inform r ON r.hotel_num = h.hotel_num WHERE email=#{email};
+	</select>
+	
+	<delete id="deleteReserve" parameterType="ShowReserveVO">
+		delete from reserve_inform where reserve_num=${reserve_num};
+	</delete>
+</mapper>        

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+ 		<setting name="defaultStatementTimeout" value="60"/>
+ 	</settings>
+    <typeAliases>
+        <typeAlias type="com.sumin.allbnb.MembersVO" alias="membersVO"/>
+        <typeAlias type="com.sumin.allbnb.HotelInformVO" alias="hotelInformVO"/>
+        <typeAlias type="com.sumin.allbnb.CountMoneyVO" alias="CountMoneyVO"/>
+        <typeAlias type="com.sumin.allbnb.ReserveInformVO" alias="ReserveInformVO"/>
+        <typeAlias type="com.sumin.allbnb.ShowReserveVO" alias="ShowReserveVO"/>
+    </typeAliases>
+    
+    <mappers>
+        <mapper resource="mappings/members-mapping.xml"/>
+        <mapper resource="mappings/hotel-mapping.xml"/>
+        <mapper resource="mappings/count-mapping.xml"/>
+        <mapper resource="mappings/reserve-mapping.xml"/>
+        <mapper resource="mappings/show-mapping.xml"/>
+    </mappers>
+    
+</configuration>
