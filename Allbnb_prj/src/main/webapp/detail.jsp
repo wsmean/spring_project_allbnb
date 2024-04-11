@@ -106,18 +106,18 @@
             <img class="mb-4" src="/static/img/brand_icon.png" alt="" width="40" height="40">
             <h3 class="h3 mb-3 fw-normal align-middle" style="display: inline-block;">올비앤비에 오신 것을 환영합니다.</h3>
             <div class="form-floating">
-              <input type="text" class="form-control" id="id" placeholder="name@example.com">
+              <input type="text" class="form-control" id="login_email" placeholder="name@example.com">
               <label for="id">이메일</label>
             </div><br>
             <div class="form-floating">
-              <input type="password" class="form-control" id="pwd" placeholder="Password">
+              <input type="password" class="form-control" id="login_pwd1" placeholder="Password">
               <label for="pwd">비밀번호</label>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-          <button type="button" class="btn btn-primary" style="background-color: #fe5c5f; border: #fe5c5f;">로그인</button>
+          <button type="button" class="btn btn-primary" style="background-color: #fe5c5f; border: #fe5c5f;" onclick="login_click()">로그인</button>
         </div>
       </div>
     </div>
@@ -137,19 +137,19 @@
           <img class="mb-4" src="/static/img/brand_icon.png" alt="" width="40" height="40">
           <h3 class="h3 mb-3 fw-normal align-middle" style="display: inline-block;">사용자 정보를 입력해주세요.</h3>
           <div class="form-floating">
-            <input type="text" class="form-control" id="name" placeholder="name@example.com">
+            <input type="text" class="form-control" id="join_name" placeholder="name@example.com">
             <label for="name">이름</label>
           </div><br>
           <div class="form-floating">
-            <input type="text" class="form-control" id="email" placeholder="name@example.com">
+            <input type="text" class="form-control" id="join_email" placeholder="name@example.com">
             <label for="email">이메일</label>
           </div><br>
           <div class="form-floating">
-            <input type="password" class="form-control" id="pwd" placeholder="Password">
+            <input type="password" class="form-control" id="join_pwd1" placeholder="Password">
             <label for="pwd">비밀번호</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="pwd1" placeholder="Password">
+            <input type="password" class="form-control" id="join_pwd2" placeholder="Password">
             <label for="pwd1">비밀번호 확인</label>
           </div>
           <div>
